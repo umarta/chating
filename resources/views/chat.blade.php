@@ -249,6 +249,9 @@
                 if (data.error) {
                     throw new Error(data.error);
                 }
+
+                // Emit the message through WebSocket
+                socket.emit('chat_message', data.message);
             } catch (error) {
                 console.error('Error sending message:', error);
                 alert('Failed to send message: ' + error.message);
