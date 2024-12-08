@@ -1,0 +1,12 @@
+{
+  "rules": {
+    "messages": {
+      ".read": "auth != null",
+      ".write": "auth != null",
+      ".indexOn": ["timestamp"],
+      "$message": {
+        ".validate": "newData.hasChildren(['userId', 'userName', 'text', 'timestamp'])"
+      }
+    }
+  }
+}
